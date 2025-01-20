@@ -47,7 +47,6 @@ add_user() {
 
     # Check if the user is a samba user
     output=$(pdbedit -s "$cfg" -L)
-    echo "pdbedit output: $output"
 
     if echo "$output" | grep -q "^$username:"; then
         # If the user is a samba user, update its password in case it changed
